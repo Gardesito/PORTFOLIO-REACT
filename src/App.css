@@ -4,6 +4,7 @@
   outline: none;
   box-sizing: border-box;
 }
+
 /* ---------------------------------------------BODY------------------------------------------ */
 body {
   font-family: var(--body-font);
@@ -69,6 +70,27 @@ body:before {
   position: relative;
 }
 
+/* -----------  RELOJ-------- */
+.clock {
+  font-family: var(--body-font);
+  display: flex;
+  color: #ffffff;
+  padding-left: 13%;
+  gap: 20%;
+}
+
+/* #time {
+  letter-spacing: 0.05em;
+  font-size: 80px;
+  padding: 5px 0;
+}
+
+#date {
+  letter-spacing: 0.1em;
+  font-size: 24px;
+} */
+
+/* --------------------- */
 /* ////// */
 img {
   max-width: 100%;

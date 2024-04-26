@@ -1,5 +1,40 @@
 import "./App.css";
 
+/*  const week = [
+  "Lunes",
+  "Martes",
+  "Miercoles",
+  "Jueves",
+  "Viernes",
+  "Sabado",
+  "Domingo",
+];
+
+function updateTime() {
+  var now = new Date();
+  document.getElementById("time").innerText =
+    zeroPadding(now.getHours(), 2) +
+    ":" +
+    zeroPadding(now.getMinutes(), 2) +
+    ":" +
+    zeroPadding(now.getSeconds(), 2);
+
+  document.getElementById("date").innerText =
+    now.getFullYear() +
+    "-" +
+    zeroPadding(now.getMonth() + 1, 2) +
+    "-" +
+    zeroPadding(now.getDate(), 2) +
+    " " +
+    week [now.getDay()];
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+function zeroPadding(num, digit) {
+  return String(num).padStart(digit, "0");
+} 
+  */
 function App() {
   return (
     <>
@@ -63,6 +98,7 @@ function App() {
               <a
                 className="sidebar-link"
                 href="https://www.linkedin.com/in/elias-solis/"
+                target="_blank"
               >
                 <svg
                   width="30"
@@ -85,7 +121,11 @@ function App() {
                 </svg>
                 Linkedin
               </a>
-              <a className="sidebar-link" href="https://github.com/Gardesito">
+              <a
+                className="sidebar-link"
+                href="https://github.com/Gardesito"
+                target="_blank"
+              >
                 <svg
                   width="30"
                   height="30"
@@ -110,6 +150,7 @@ function App() {
               <a
                 className="sidebar-link"
                 href="https://www.instagram.com/elias_fx/?hl=es-la"
+                target="_blank"
               >
                 <svg
                   width="30"
@@ -163,6 +204,13 @@ function App() {
             <div className="search-bar">
               <input type="text" placeholder="Search" />
             </div>
+            {/* ----Reloj -----*/}
+
+            <div className="clock">
+              <p id="date"></p>
+              <p id="time"> </p>
+            </div>
+            {/* ------------------ */}
             <div className="user-settings">
               <img
                 className="user-img"
