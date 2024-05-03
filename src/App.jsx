@@ -1,5 +1,52 @@
 import "./App.css";
 
+import React, { useState, useEffect } from "react";
+
+const Week = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+const ZeroPadding = (num, digit) => {
+  return String(num).padStart(digit, "0");
+};
+
+const Clock = () => {
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
+
+  const updateTime = () => {
+    const now = new Date();
+    setTime(
+      ZeroPadding(now.getHours(), 2) +
+        ":" +
+        ZeroPadding(now.getMinutes(), 2) +
+        ":" +
+        ZeroPadding(now.getSeconds(), 2)
+    );
+    setDate(
+      now.getFullYear() +
+        "-" +
+        ZeroPadding(now.getMonth() + 1, 2) +
+        "-" +
+        ZeroPadding(now.getDate(), 2) +
+        " " +
+        Week[now.getDay()]
+    );
+  };
+
+  useEffect(() => {
+    updateTime();
+    const intervalId = setInterval(updateTime, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
+    <div>
+      <p id="time">{time}</p>
+      <p id="date">{date}</p>
+    </div>
+  );
+};
+
+
 /*  const week = [
   "Lunes",
   "Martes",
